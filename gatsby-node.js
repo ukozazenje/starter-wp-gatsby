@@ -1,5 +1,5 @@
-const path = require(`path`)
-const slash = require(`slash`)
+const path = require(`path`);
+const slash = require(`slash`);
 
 // Implement the Gatsby API “createPages”. This is
 // called after the Gatsby bootstrap is finished so you have
@@ -7,8 +7,8 @@ const slash = require(`slash`)
 // create pages.
 // Will create pages for WordPress pages (route : /{slug})
 // Will create pages for WordPress posts (route : /post/{slug})
-exports.createPages = async ({graphql, actions}) => {
-  const {createPage} = actions
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   // The “graphql” function allows us to run arbitrary
   // queries against the local Gatsby GraphQL schema. Think of
@@ -38,18 +38,18 @@ exports.createPages = async ({graphql, actions}) => {
         }
       }
     }
-  `)
+  `);
 
   // Check for any errors
   if (result.errors) {
-    throw new Error(result.errors)
+    throw new Error(result.errors);
   }
 
   // Access query results via object destructuring
-  const {allWordpressPage, allWordpressPost} = result.data
+  const { allWordpressPage, allWordpressPost } = result.data;
 
   // Create Page pages.
-  const pageTemplate = path.resolve(`./src/templates/page.js`)
+  const pageTemplate = path.resolve(`./src/templates/page.js`);
   // We want to create a detailed page for each page node.
   // The path field contains the relative original WordPress link
   // and we use it for the slug to preserve url structure.
@@ -68,10 +68,10 @@ exports.createPages = async ({graphql, actions}) => {
       context: {
         id: edge.node.id,
       },
-    })
-  })
+    });
+  });
 
-  const postTemplate = path.resolve(`./src/templates/post.js`)
+  const postTemplate = path.resolve(`./src/templates/post.js`);
   // We want to create a detailed page for each post node.
   // The path field stems from the original WordPress link
   // and we use it for the slug to preserve url structure.
@@ -83,6 +83,6 @@ exports.createPages = async ({graphql, actions}) => {
       context: {
         id: edge.node.id,
       },
-    })
-  })
-}
+    });
+  });
+};

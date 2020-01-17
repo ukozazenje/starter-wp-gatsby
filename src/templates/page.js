@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
-import {graphql} from 'gatsby'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import React, { Component } from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 class Page extends Component {
   render() {
-    const page = this.props.data.wordpressPage
+    const page = this.props.data.wordpressPage;
     return (
       <Layout>
         <SEO title={page.title} />
@@ -21,18 +21,18 @@ class Page extends Component {
           }}
         />
       </Layout>
-    )
+    );
   }
 }
 
-export default Page
+export default Page;
 
 export const pageQuery = graphql`
   query SinglePage($id: String!) {
-    wordpressPage(id: {eq: $id}) {
+    wordpressPage(id: { eq: $id }) {
       id
       title
       content
     }
   }
-`
+`;

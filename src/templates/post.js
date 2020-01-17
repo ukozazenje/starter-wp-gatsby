@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
-import {graphql} from 'gatsby'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import React, { Component } from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 class Post extends Component {
   render() {
-    const post = this.props.data.wordpressPost
+    const post = this.props.data.wordpressPost;
     return (
       <Layout>
         <SEO title={post.title} />
@@ -21,18 +21,18 @@ class Post extends Component {
           }}
         />
       </Layout>
-    )
+    );
   }
 }
 
-export default Post
+export default Post;
 
 export const pageQuery = graphql`
   query PostPage($id: String!) {
-    wordpressPost(id: {eq: $id}) {
+    wordpressPost(id: { eq: $id }) {
       id
       title
       content
     }
   }
-`
+`;

@@ -1,6 +1,6 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 module.exports = {
   siteMetadata: {
     title: `Default title`,
@@ -135,8 +135,8 @@ module.exports = {
         // Defaults to false
         keepMediaSizes: false,
         // use a custom normalizer which is applied after the built-in ones.
-        normalizer: function({entities}) {
-          return entities
+        normalizer: function({ entities }) {
+          return entities;
         },
         // The normalizers option allows you to manipulate the array of internal
         // normalizers that are applied to entities after they're fetched
@@ -151,9 +151,9 @@ module.exports = {
           ...normalizers,
           {
             name: 'nameOfTheFunction',
-            normalizer: function({entities}) {
+            normalizer: function({ entities }) {
               // manipulate entities here
-              return entities
+              return entities;
             },
           },
         ],
@@ -164,4 +164,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
