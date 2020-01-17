@@ -7,8 +7,8 @@ const slash = require(`slash`)
 // create pages.
 // Will create pages for WordPress pages (route : /{slug})
 // Will create pages for WordPress posts (route : /post/{slug})
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+exports.createPages = async ({graphql, actions}) => {
+  const {createPage} = actions
 
   // The “graphql” function allows us to run arbitrary
   // queries against the local Gatsby GraphQL schema. Think of
@@ -46,7 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost } = result.data
+  const {allWordpressPage, allWordpressPost} = result.data
 
   // Create Page pages.
   const pageTemplate = path.resolve(`./src/templates/page.js`)

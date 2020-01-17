@@ -1,13 +1,12 @@
-import React, { Component } from "react"
-import { Link } from "gatsby"
+import React, {Component} from 'react'
 
 class Layout extends Component {
   render() {
     return (
       <>
-        <header></header>
-          {this.props.children}
-        <footer></footer>
+        <header />
+        {this.props.children}
+        <footer />
       </>
     )
   }
