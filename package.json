@@ -8,8 +8,15 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@babel/core": "^7.8.3",
+    "babel-jest": "^24.9.0",
+    "babel-preset-gatsby": "^0.2.27",
+    "eslint": "^6.8.0",
+    "eslint-config-kentcdodds": "^14.7.0",
+    "eslint-loader": "^3.0.3",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.38",
+    "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-feed": "^2.3.23",
     "gatsby-plugin-google-analytics": "^2.1.29",
     "gatsby-plugin-manifest": "^2.2.31",
@@ -27,6 +34,9 @@
     "gatsby-source-wordpress": "^3.1.58",
     "gatsby-transformer-remark": "^2.6.39",
     "gatsby-transformer-sharp": "^2.3.12",
+    "husky": "^4.0.10",
+    "identity-obj-proxy": "^3.0.0",
+    "lint-staged": "^9.5.0",
     "node-sass": "^4.13.0",
     "prismjs": "^1.17.1",
     "react": "^16.12.0",
@@ -40,6 +50,22 @@
   },
   "devDependencies": {
     "prettier": "^1.19.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,md,mdx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
