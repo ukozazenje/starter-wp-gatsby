@@ -38,7 +38,7 @@
     "husky": "^4.0.10",
     "identity-obj-proxy": "^3.0.0",
     "lint-staged": "^9.5.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
