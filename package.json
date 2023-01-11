@@ -33,7 +33,7 @@
     "gatsby-remark-smartypants": "^2.1.17",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-source-wordpress": "^3.1.58",
-    "gatsby-transformer-remark": "^2.6.39",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.12",
     "husky": "^4.0.10",
     "identity-obj-proxy": "^3.0.0",
